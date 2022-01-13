@@ -19,4 +19,9 @@ public class ItemsServiceImpl implements ItemsService {
 		return itemsRepository.findAll();
 	}
 
+	@Override
+	public List<Items> getItemsByCategory(String category) {
+		return itemsRepository.findItemsByCategory(category);
+	}
+
 }
