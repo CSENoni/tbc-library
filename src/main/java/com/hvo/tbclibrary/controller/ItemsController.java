@@ -2,6 +2,7 @@ package com.hvo.tbclibrary.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,5 +38,10 @@ public class ItemsController {
 	public void addItem(@RequestBody Items item) {
 		item.setId(0);
 		itemsService.save(item);
+	}
+	
+	@DeleteMapping("/items/{itemId}")
+	public void deleteItem(@PathVariable int itemId) {
+		itemsService.deleteItemById(itemId);
 	}
 }

@@ -9,4 +9,5 @@ public interface ItemsService {
 	public List<Items> getItemsByCategory(String category);
 	public Items getItem(int id);
 	public void save(Items item);
+	public void deleteItemById(int id);
 }
