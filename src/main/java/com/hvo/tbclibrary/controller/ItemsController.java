@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,6 +38,11 @@ public class ItemsController {
 	@PostMapping("/items")
 	public void addItem(@RequestBody Items item) {
 		item.setId(0);
+		itemsService.save(item);
+	}
+	
+	@PutMapping("/items") 
+	public void updateItem(@RequestBody Items item) {
 		itemsService.save(item);
 	}
 	
