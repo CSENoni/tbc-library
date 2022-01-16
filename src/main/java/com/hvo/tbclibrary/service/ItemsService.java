@@ -8,4 +8,5 @@ public interface ItemsService {
 	public List<Items> getAllItems();
 	public List<Items> getItemsByCategory(String category);
 	public Items getItem(int id);
+	public void save(Items item);
 }

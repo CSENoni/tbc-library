@@ -36,4 +36,9 @@ public class ItemsServiceImpl implements ItemsService {
 		throw new RuntimeException("Cannot find item id: " + id);
 	}
 
+	@Override
+	public void save(Items item) {
+		itemsRepository.save(item);
+	}
+
 }
